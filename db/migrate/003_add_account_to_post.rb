@@ -5,7 +5,7 @@ class AddAccountToPost < ActiveRecord::Migration
     end
     # assign a user to all existing posts
     first_account = Account.first
-    Post.all.each { |p| p.update_attribute(:account_id, first_account) }
+    Post.all.each { |p| p.update_attribute(:account_id, first_account.id) }
   end
 
   def self.down
